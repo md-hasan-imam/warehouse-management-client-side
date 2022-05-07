@@ -49,7 +49,7 @@ const Inventory = () => {
                 <div className="car-details text-start p-3">
                     <h3>{inventory.name}</h3>
                     <p>{inventory.description}</p>
-                    <h5>Price: ${inventory.price}</h5>
+                    <h5 className='fs-4'>Price: ${inventory.price}</h5>
                     <h6><small> Supplier: </small>{inventory.supplier}</h6>
                     <h6> <small> Available in Stock: </small> {inventory.quantity}</h6>
                     <button className='my-2 px-2 rounded'  onClick={() => handleDelivered()} >Delivered</button>
