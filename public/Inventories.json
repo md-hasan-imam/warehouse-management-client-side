@@ -1,0 +1,67 @@
+[
+    {
+        "img": "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614164/2021_honda_civic_hatchback_angularfront.jpg",
+        "name": "Honda Civic 2021",
+        "description": "The Honda Civic is a good compact car that offers fun driving dynamics without sacrificing ride comfort. Additionally, it delivers quick acceleration and great fuel economy, regardless of which engine you choose. The Civic is available as a sedan and a hatchback for 2021, and both body styles provide plenty of passenger space and cargo room..",
+        "price": "30000",
+        "quantity": "45",
+        "supplier":"Ervin Howell" 
+    },
+    {
+        "img": "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614912/2022_mazda_mazda_3_angularfront.jpg",
+        "name": "Mazda Mazda3 2022",
+        "description": "The 2022 Mazda3 is a superb compact car . This sporty sedan is a joy to drive thanks to its speedy acceleration, engaging handling, and great steering feel. The suspension system smooths out bumps in the road. ",
+        "price": "45000",
+        "quantity": "35",
+        "supplier":"Patricia Lebsack" 
+    },
+    {
+        "img": "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614164/2021_honda_civic_hatchback_angularfront.jpg",
+        "name": "Honda Civic 2021",
+        "description": "The Honda Civic is a good compact car that offers fun driving dynamics without sacrificing ride comfort. Additionally, it delivers quick acceleration and great fuel economy, regardless of which engine you choose. The Civic is available as a sedan and a hatchback for 2021, and both body styles provide plenty of passenger space and cargo room..",
+        "price": "33000",
+        "quantity": "30",
+        "supplier":"Chelsey Dietrich" 
+    },
+    {
+        "img": "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614164/2021_honda_civic_hatchback_angularfront.jpg",
+        "name": "2022 Kia Forte",
+        "description": "The 2022 Kia Forte sits in the top half of our compact car rankings thanks in part to its well-equipped and easy-to-use infotainment system, spacious and upscale cabin, and impressive fuel economy.",
+        "price": "4300",
+        "quantity": "35",
+        "supplier":"Ervin Howell" 
+    },
+    {
+        "img": "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614164/2021_honda_civic_hatchback_angularfront.jpg",
+        "name": "Honda Civic 2021",
+        "description": "The Honda Civic is a good compact car that offers fun driving dynamics without sacrificing ride comfort. Additionally, it delivers quick acceleration and great fuel economy, regardless of which engine you choose. The Civic is available as a sedan and a hatchback for 2021, and both body styles provide plenty of passenger space and cargo room..",
+        "price": "2300",
+        "quantity": "50",
+        "supplier":"Chelsey Dietrich" 
+    },
+    {
+        "img": "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614164/2021_honda_civic_hatchback_angularfront.jpg",
+        "name": "2022 Kia Forte",
+        "description": "The 2022 Kia Forte sits in the top half of our compact car rankings thanks in part to its well-equipped and easy-to-use infotainment system, spacious and upscale cabin, and impressive fuel economy.",
+        "price": "5300",
+        "quantity": "15",
+        "supplier":"Ervin Howell" 
+    },
+    {
+        "img": "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614164/2021_honda_civic_hatchback_angularfront.jpg",
+        "name": "Honda Civic 2021",
+        "description": "The Honda Civic is a good compact car that offers fun driving dynamics without sacrificing ride comfort. Additionally, it delivers quick acceleration and great fuel economy, regardless of which engine you choose. The Civic is available as a sedan and a hatchback for 2021, and both body styles provide plenty of passenger space and cargo room..",
+        "price": "44000",
+        "quantity": "17",
+        "supplier":"Kurtis Weissnat" 
+    },
+    {
+        "img": "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614164/2021_honda_civic_hatchback_angularfront.jpg",
+        "name": "Honda Civic 2021",
+        "description": "The Honda Civic is a good compact car that offers fun driving dynamics without sacrificing ride comfort. Additionally, it delivers quick acceleration and great fuel economy, regardless of which engine you choose. The Civic is available as a sedan and a hatchback for 2021, and both body styles provide plenty of passenger space and cargo room..",
+        "price": "55000",
+        "quantity": "20",
+        "supplier":"Ervin Howell" 
+    }
+
+]
