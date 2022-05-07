@@ -6,7 +6,7 @@ import './Inventory.css'
 const Inventory = () => {
 
     const [inventory, setInventory] = useState([]);
-    // const [quantity, setQuantity] = useState('');
+    // const [quantity, setQuantity] = useState(0);
     const [reload, setIsReload] = useState(true);
     const params = useParams();
     const id = params.id;
@@ -22,6 +22,7 @@ const Inventory = () => {
         const previousQuantity = inventory.quantity;
         const newQuantity = previousQuantity - 1;
         const updatedQuantity ={newQuantity} ;
+        
 
         // send data to the server
         const url = `http://localhost:5000/inventory/${id}`;
@@ -36,12 +37,43 @@ const Inventory = () => {
             .then(data => {
                 setIsReload(!reload)
                 console.log('success', data);
-                alert('quantity updated successfully!!!');
+                alert('Single unit delivered successfully!!!');
             })
-
     };
+
+    const handleRestockItems = (event) => {
+        event.preventDefault();
+        const previousQuantity = inventory.quantity;
+        const newStockQuantity =parseInt(event.target.restock.value) ;
+        const newQuantity = previousQuantity + newStockQuantity;
+        const updatedQuantity ={newQuantity} ;
+        event.target.reset();
+
+        // send data to the server
+        const url = `http://localhost:5000/inventory/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setIsReload(!reload)
+                console.log('success', data);
+                alert('Stock updated successfully!!!');
+            })
+    };
+
+
     return (
         <div className="single-inventory">
+            <form action="" onSubmit={handleRestockItems} >
+                <input type="number" name="restock" id="restock" required className="me-2"/>
+                <input type="submit" value="Stock Received Items"  className="px-1"/>
+
+            </form>
             <div className='inventory-card d-flex my-5'>
                 <div className="car-img">
                     <img src={inventory.img} alt="" />

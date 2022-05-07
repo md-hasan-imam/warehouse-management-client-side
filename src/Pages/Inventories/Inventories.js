@@ -18,7 +18,7 @@ const Inventories = () => {
     return (
         <div className='inventory-container'>
             {
-                inventories.map(inventory =><div className='inventory-card d-flex' inventory={inventory} key={inventory._id}>
+                inventories.map(inventory => <div className='inventory-card d-flex' inventory={inventory} key={inventory._id}>
                 <div className="car-img">
                     <img src={inventory.img} alt=""/>
                 </div>
@@ -30,7 +30,8 @@ const Inventories = () => {
                     <h6><small> Supplier: </small>{inventory.supplier}</h6>
                     <button className='my-2 px-2 rounded' onClick={() => navigateToSingleItem(inventory._id)}>Update</button>
                 </div>
-            </div>)
+            </div>
+            )
             }
         </div>
     );
