@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './Pages/Home/Home';
 import { Route, Routes } from 'react-router-dom';
@@ -10,11 +9,14 @@ import Inventory from './Pages/Inventory/Inventory';
 import SignUp from './Pages/Login/SignUp/SignUp';
 import RequireAuth from './RequireAuth/RequireAuth';
 import AddInventory from './Pages/AddInventory/AddInventory';
+import MyItems from './Pages/MyItems/MyItems';
+import NotFoundPage from './Pages/NotFoundPage/NotFoundPage';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
+
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
@@ -29,8 +31,14 @@ function App() {
             <AddInventory></AddInventory>
           </RequireAuth>
         }></Route>
+        <Route path='/myitems' element={
+          <RequireAuth>
+            <MyItems></MyItems>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='*' element={<NotFoundPage></NotFoundPage>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
