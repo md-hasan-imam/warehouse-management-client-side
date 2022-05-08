@@ -20,7 +20,7 @@ const AddInventory = () => {
         const newItem = { email, name, description, price, quantity, supplier, img }
         // console.log(email,name,description,price,quantity,supplier,img);
 
-        const url = `http://localhost:5000/inventories`;
+        const url = `https://fast-escarpment-66103.herokuapp.com/inventories`;
         fetch(url, {
             method: "POST",
             headers: {
