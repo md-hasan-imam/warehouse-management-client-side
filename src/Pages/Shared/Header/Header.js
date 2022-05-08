@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className="container header-container my-4 mb-2">
+            <div className="container header-container my-4 mb-2 fw-bold">
                 <div className="d-flex justify-content-between">
                     <div className="header-logo ">
                         <h2 className='text-start'>StoreCare</h2>

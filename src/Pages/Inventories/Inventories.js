@@ -7,17 +7,11 @@ import './Inventories.css'
 const Inventories = () => {
   const [inventories, setInventories] = useInventories();
 
-  const navigate = useNavigate();
-
-  const navigateToSingleItem = (id) => {
-    const url = `/inventory/${id}`;
-    navigate(url);
-  }
-
 
   return (
     <div className='inventory-container'>
-      <table className="table table-bordered table-light">
+      <h2 className='mb-5 mt-4'>All Inventories</h2>
+      <table className="table table-bordered table-light  table-striped ">
         <thead>
           <tr className='fs-4'>
             <th scope="col">Product Id</th>

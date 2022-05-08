@@ -13,32 +13,40 @@ const Home = () => {
 
     const navigate = useNavigate()
 
-    const navigateToSingleItem =(id)=>{
-        const url =`/inventory/${id}`;
+    const navigateToSingleItem = (id) => {
+        const url = `/inventory/${id}`;
         navigate(url);
     }
 
     return (
         <div className='my-5'>
             <Banner></Banner>
-            <h2 className='my-5'>Available Inventories </h2>
+            <h2 className='my-5 fw-bold'>Available Inventories </h2>
+            <div className='home-inventory-container'>
             {
-                homePageInventories.map(inventory =><div className='inventory-card d-flex' inventory={inventory} key={inventory._id}>
-                <div className="car-img">
-                    <img src={inventory.img} alt=""/>
-                </div>
-                <div className="car-details text-start p-3">
-                    <h3>{inventory.name}</h3>
-                    <p>{inventory.description}</p>
-                    <h5 className='fs-5'>Price: ${inventory.price}</h5>
-                    <h6> <small> Available in Stock: </small> {inventory.quantity}</h6>
-                    <h6><small> Supplier: </small>{inventory.supplier}</h6>
-                    <button className='my-2 px-2 rounded' onClick={() => navigateToSingleItem(inventory._id)}>Update Stock</button>
-                </div>
-            </div>)
+                homePageInventories.map(inventory => <div className='inventory-card' inventory={inventory} key={inventory._id}>
+                    <div className="car-img">
+                        <img src={inventory.img} alt="" className=''/>
+                    </div>
+                    <div className="car-details text-start p-3">
+                        <h4 className='fw-bold text-center mb-2'>{inventory.name}</h4>
+                        <p>{inventory.description.slice(0,150)}</p>
+                        <div className="d-flex justify-content-between">
+                            <div className="">
+                                <h6 className='fs-5'>Price: ${inventory.price}</h6>
+                                <h6 className=''><small> Supplier: </small>{inventory.supplier}</h6>
+                                <h6> <small> Available in Stock: </small> {inventory.quantity}</h6>
+                            </div>
+                            <div>
+                                <button className='my-2 px-2 rounded btn btn-primary me-5' onClick={() => navigateToSingleItem(inventory._id)}>Update Stock</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>)
             }
-
-            <button onClick={() => navigate("/inventories")} className='p-2 rounded'>
+            </div>
+            
+            <button onClick={() => navigate("/inventories")} className='p-2 rounded btn btn-primary mt-5'>
                 Manage All Inventories
             </button>
 

@@ -1,18 +1,22 @@
-.inventory-card{
+.inventory-card {
     border: 2px solid #222;
-    margin: 20px 40px;
     border-radius: 15px;
 }
 
-.inventory-card .car-img{
-    width: 400px;
-}
-.inventory-card .car-img img{
-    width: 330px;
+
+.inventory-card .car-img img {
+
     border-radius: 20px;
     padding: 20px;
 }
-.single-inventory{
-    margin-top:50px ;
+
+.single-inventory {
+    margin-top: 50px;
     margin-bottom: 80px;
+}
+
+.restock-button {
+    font-weight: 600;
+    outline: none;
+    border: transparent;
 }

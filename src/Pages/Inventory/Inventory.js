@@ -12,7 +12,7 @@ const Inventory = () => {
     const id = params.id;
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://fast-escarpment-66103.herokuapp.com/inventory/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))
@@ -25,7 +25,7 @@ const Inventory = () => {
         
 
         // send data to the server
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://fast-escarpment-66103.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -50,7 +50,7 @@ const Inventory = () => {
         event.target.reset();
 
         // send data to the server
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://fast-escarpment-66103.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -70,8 +70,8 @@ const Inventory = () => {
     return (
         <div className="single-inventory">
             <form action="" onSubmit={handleRestockItems} >
-                <input type="number" name="restock" id="restock" required className="me-2"/>
-                <input type="submit" value="Stock Received Items"  className="px-1"/>
+                <input type="number" name="restock" id="restock" placeholder='Input Received' required className="me-2 px-2 py-1"/>
+                <input type="submit" value="Stock Items"  className="restock-button bg-primary text-white px-3 py-2 rounded "/>
 
             </form>
             <div className='inventory-card d-flex my-5'>
