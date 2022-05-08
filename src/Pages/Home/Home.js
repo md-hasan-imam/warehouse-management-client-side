@@ -29,16 +29,16 @@ const Home = () => {
                         <img src={inventory.img} alt="" className=''/>
                     </div>
                     <div className="car-details text-start p-3">
-                        <h4 className='fw-bold text-center mb-2'>{inventory.name}</h4>
-                        <p>{inventory.description.slice(0,150)}</p>
-                        <div className="d-flex justify-content-between">
+                        <h4 className='fw-bold text-center mb-3 fs-4'>{inventory.name}</h4>
+                        <p className='text-center mb-3  ' title={inventory.description}>{inventory.description.slice(0,150)}...</p>
+                        <div className="d-flex justify-content-between align-items-center">
                             <div className="">
-                                <h6 className='fs-5'>Price: ${inventory.price}</h6>
-                                <h6 className=''><small> Supplier: </small>{inventory.supplier}</h6>
-                                <h6> <small> Available in Stock: </small> {inventory.quantity}</h6>
+                                <h6 >Price: <span className='fw-bold'> ${inventory.price}</span> </h6>
+                                <h6 >Supplier:<span className='fw-bold'> {inventory.supplier}</span> </h6>
+                                <h6>Available in Stock:<span className='fw-bold'> {inventory.quantity}</span></h6>
                             </div>
                             <div>
-                                <button className='my-2 px-2 rounded btn btn-primary me-5' onClick={() => navigateToSingleItem(inventory._id)}>Update Stock</button>
+                                <button className='my-2 px-2 rounded btn btn-primary me-2' onClick={() => navigateToSingleItem(inventory._id)}>Update Stock</button>
                             </div>
                         </div>
                     </div>
