@@ -9,7 +9,7 @@ const MyItems = () => {
     const email = user.email;
 
     useEffect(() => {
-        const url = `https://fast-escarpment-66103.herokuapp.com/inventories?email=${email}`;
+        const url = `https://fast-escarpment-66103.herokuapp.com/myitems?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyInventories(data))
