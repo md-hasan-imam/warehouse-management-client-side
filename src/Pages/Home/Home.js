@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useInventories from '../../Hooks/useInventories';
+import AboutUs from './AboutUs/AboutUs';
 import Awards from './Awards/Awards';
 import Banner from './Banner/Banner';
 import './Home.css'
@@ -48,6 +49,7 @@ const Home = () => {
                 Manage All Inventories
             </button>
             <Awards></Awards>
+            <AboutUs></AboutUs>
 
         </div>
     );
