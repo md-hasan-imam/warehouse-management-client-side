@@ -9,7 +9,7 @@ const MyItems = () => {
     const email = user.email;
 
     useEffect(() => {
-        const url = `https://fast-escarpment-66103.herokuapp.com/myitems?email=${email}`;
+        const url = `http://localhost:5000/myitems?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyInventories(data))
@@ -20,7 +20,7 @@ const MyItems = () => {
         if (proceed) {
           console.log('deleting data with id', id);
     
-          const url = `https://fast-escarpment-66103.herokuapp.com/inventory/${id}`
+          const url = `http://localhost:5000/inventory/${id}`
           fetch(url, {
             method: 'DELETE'
           })
@@ -37,8 +37,8 @@ const MyItems = () => {
 
     return (
 
-        <div className='myitem-container container-fluid'>
-            <h2>Your Items</h2>
+        <div className='myitem-container container-fluid mt-5'>
+            <h2 className='mb-4'>Your Items</h2>
             <table className="table table-bordered table-light  table-striped ">
                 <thead>
                     <tr className='fs-4'>

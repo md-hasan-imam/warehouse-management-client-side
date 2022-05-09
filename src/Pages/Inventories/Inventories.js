@@ -13,7 +13,7 @@ const Inventories = () => {
     if (proceed) {
       console.log('deleting data with id', id);
 
-      const url = `https://fast-escarpment-66103.herokuapp.com/inventory/${id}`
+      const url = `http://localhost:5000/inventory/${id}`
       fetch(url, {
         method: 'DELETE'
       })

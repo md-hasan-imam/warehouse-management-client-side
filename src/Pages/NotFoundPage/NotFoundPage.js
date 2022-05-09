@@ -2,8 +2,8 @@ import React from 'react';
 
 const NotFoundPage = () => {
     return (
-        <div>
-            <h2 className='my-5'>opps!! page you are searching is no found</h2>
+        <div className='my-5'>
+            <img src="https://i.ibb.co/4s0WqcY/page-not-found.jpg" alt="" className='mb-5' />
         </div>
     );
 };

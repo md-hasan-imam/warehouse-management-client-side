@@ -1,27 +1,24 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGithub } from 'react-firebase-hooks/auth';
+import React, { useRef } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import './Login.css'
 
 const Login = () => {
 
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    const emailref = useRef('')
 
-    if(loading ){
+    if (loading) {
         return <Loading></Loading>
     }
 
@@ -32,8 +29,6 @@ const Login = () => {
     if (error || gitError) {
         errorELement = <p className='text-danger'>Error: {error?.message || gitError?.message}</p>
     }
-
-
 
     const handleLogIn = (event) => {
         event.preventDefault();
@@ -47,31 +42,33 @@ const Login = () => {
         signInWithGithub();
     }
 
+    const handleResetPassword = (event) => {
+        const email = emailref.current.value;
+        sendPasswordResetEmail(email);
+        toast('Reset password sent to your email')
+    }
 
     return (
         <div>
             <div className='signup-form my-5'>
                 <h2 className='my-5' style={{ textAlign: 'center' }}>Please Log-in</h2>
                 <form onSubmit={handleLogIn}>
-                    <input type="email" name="email" id="email" placeholder='Your Email' required />
-                    <input type="password" name="password" id="password" placeholder='Password' required/>
+                    <input type="email"  ref={emailref} name="email" id="email" placeholder='Your Email' required />
+                    <input type="password" name="password" id="password" placeholder='Password' required />
                     {errorELement}
-                    <input type="submit" value="Log-in" />
+                    <input type="submit" value="Log-in" className=' w-50 mx-auto my-3 mb-4 mt-4 btn-primary rounded' />
+                    <div className='info-manage-links'>
+                        <p className=''>Have no account ? <Link to='/signUp' className='text-decoration-none   text-primary fs-6'>Sign-Up Please</Link></p>
+                        <p className=''>Forget password?  <span onClick={handleResetPassword} className='text-decoration-none text-primary reset-link fs-6'>Reset-Password</span></p>
+                    </div>
                 </form>
-
-                <p className='fs-6 my-4'>Have no account ? <Link to='/signUp' className='text-decoration-none fs-6 text-primary'>Sign-Up Please</Link></p>
             </div>
             <div>
-                    <div className='d-flex align-items-center'>
-                        <div className='line'></div>
-                        <p className='or'>or</p>
-                        <div className='line'></div>
-                    </div>
-                    <div className='others-signup'>
-                        <button onClick={handleSignInWithGithub} className=''>Login with Github</button>
-                    </div>
+                <div className='others-signup'>
+                    <button onClick={handleSignInWithGithub} className='mb-5 p-1 rounded'>Login with Github</button>
                 </div>
-                    <ToastContainer />
+            </div>
+            <ToastContainer />
         </div>
     );
 };

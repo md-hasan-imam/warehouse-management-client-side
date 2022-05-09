@@ -11,16 +11,17 @@ import RequireAuth from './RequireAuth/RequireAuth';
 import AddInventory from './Pages/AddInventory/AddInventory';
 import MyItems from './Pages/MyItems/MyItems';
 import NotFoundPage from './Pages/NotFoundPage/NotFoundPage';
+import Blog from './Pages/Blog/Blog';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/inventories' element={<Inventories></Inventories>}></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path='/inventory/:id' element={
           <RequireAuth>
             <Inventory></Inventory>

@@ -1,0 +1,8 @@
+.info-manage-links p{
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.reset-link{
+    cursor: pointer;
+}

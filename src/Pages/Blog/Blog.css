@@ -1,0 +1,11 @@
+.question{
+    border: 3px solid #88aae3;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: left;
+    margin: 25px 100px;
+    background: rgba(210, 216, 229, 0.1)
+}
+.question h2{
+    color: #2328be;
+}

@@ -15,17 +15,17 @@ const Header = () => {
 
     return (
         <div>
-            <div className="container header-container my-5 mb-1 fw-bold">
-                <div className="d-flex justify-content-between">
+            <div className="container  my-5 mb-1 fw-bold">
+                <div className="d-flex header-container justify-content-between">
                     <div className="header-logo ">
-                        <h2 className='text-start fw-bold'>StoreCare</h2>
+                        <h2 className='fw-bold'>StoreCare</h2>
                     </div>
                     <div className="header-nav-links d-flex">
                         <Link to='/home'>Home</Link>
                         <Link to='/blog'>Blogs</Link>
                         {
                             (user) ?
-                                <div>
+                                <div className=' header-nav-links d-flex'>
                                     <Link to='/inventories'>Manage-inventories</Link>
                                     <Link to='/additem'>Add-item</Link>
                                     <Link to='/myitems'>My-items</Link>

@@ -1,8 +1,27 @@
-.header-nav-links a{
-    margin-right:20px ;
+.header-logo h2{
+    text-align: left;
 }
-a{
+.header-nav-links a{
     text-decoration: none;
     color: black;
     font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    margin-right:20px ;
+}
+
+@media only screen and (max-width: 575px){
+    .header-container{
+        flex-direction: column;
+        display: block;
+        text-align: center;
+    }
+    .header-nav-links{
+        flex-direction: column;
+        font-size: 12px;
+    }
+    .header-nav-links a{
+        margin: 8px 0px;
+    }
+    
 }

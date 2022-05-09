@@ -25,7 +25,7 @@ const AddInventory = () => {
         const newItem = { email, name, description, price, quantity, supplier, img }
         // console.log(email,name,description,price,quantity,supplier,img);
 
-        const url = `https://fast-escarpment-66103.herokuapp.com/addinventory`;
+        const url = `http://localhost:5000/additem`;
         fetch(url, {
             method: "POST",
             headers: {
@@ -36,14 +36,13 @@ const AddInventory = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                toast('You Have Added to inventories'); 
-                // event.target.reset();
+                toast('Item is adding to inventories'); 
+                event.target.reset();
             })
             .catch((error) => {
-                setError(error);
+                console.log(error)
+                toast(error);
             })
-            
-
     }
 
     return (
@@ -57,7 +56,7 @@ const AddInventory = () => {
                 <input type="text" name='supplier' placeholder='Supplier name' required/>
                 <input type="text" name='img' placeholder='Image url' required/>
                 <input type="email" name='email' defaultValue={user.email}/>
-                {error}
+                {/* {error} */}
                 <input type="submit" value="Add item" className='w-50 mx-auto my-3 mb-5 btn-primary' />
                 <ToastContainer />
             </form>
