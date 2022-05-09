@@ -36,7 +36,6 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => {
                 setIsReload(!reload)
-                console.log('success', data);
                 alert('Single unit delivered successfully!!!');
             })
     };

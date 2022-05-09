@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useInventories from '../../Hooks/useInventories';
+import Awards from './Awards/Awards';
 import Banner from './Banner/Banner';
 import './Home.css'
 
@@ -43,10 +44,11 @@ const Home = () => {
                     </div>)
                 }
             </div>
-
             <button onClick={() => navigate("/inventories")} className='p-2 rounded btn btn-primary mt-5'>
                 Manage All Inventories
             </button>
+            <Awards></Awards>
+
         </div>
     );
 };

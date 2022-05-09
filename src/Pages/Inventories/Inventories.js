@@ -11,8 +11,6 @@ const Inventories = () => {
   const handleRemove = (id) => {
     const proceed = window.confirm('Do you really want to remove that item from your stock?')
     if (proceed) {
-      console.log('deleting data with id', id);
-
       const url = `https://fast-escarpment-66103.herokuapp.com/inventory/${id}`
       fetch(url, {
         method: 'DELETE'
@@ -20,7 +18,6 @@ const Inventories = () => {
         .then(res => res.json())
         .then(data => {
           if (data.deletedCount > 0) {
-            console.log('deleted')
             const remaining = inventories.filter(inventory => inventory._id !== id);
             setInventories(remaining);
           }
