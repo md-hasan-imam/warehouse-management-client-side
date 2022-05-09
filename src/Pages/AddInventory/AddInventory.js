@@ -31,25 +31,26 @@ const AddInventory = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                event.target.reset()
+                
             })
             .catch((error) => {
                 setError(error);
         })
+        event.target.reset()
     }
 
     return (
         <div>
             <h2 className='my-5'>Add Inventory</h2>
             <form action="" onSubmit={handleAddItem} className='full-form mx-auto'>
-                <input type="text" name='name' placeholder='Input Product name' />
-                <textarea type="text" name='description' placeholder='Description of the product' />
-                <input type="number" name='price' placeholder='Price of the product' />
-                <input type="number" name='quantity' placeholder='Quantity' />
-                <input type="text" name='supplier' placeholder='Supplier name' />
-                <input type="text" name='img' placeholder='Image url' />
-                <input type="email" name='email' defaultValue={user.email} />
-                {/* {error} */}
+                <input type="text" name='name' placeholder='Input Product name'  required/>
+                <textarea type="text" name='description' placeholder='Description of the product' required/>
+                <input type="number" name='price' placeholder='Price of the product' required/>
+                <input type="number" name='quantity' placeholder='Quantity' required/>
+                <input type="text" name='supplier' placeholder='Supplier name' required/>
+                <input type="text" name='img' placeholder='Image url' required/>
+                <input type="email" name='email' defaultValue={user.email}/>
+                {error}
                 <input type="submit" value="Add item" className='w-50 mx-auto my-3 mb-5 btn-primary' />
 
             </form>
