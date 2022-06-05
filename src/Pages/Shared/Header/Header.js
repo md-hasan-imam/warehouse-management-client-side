@@ -20,7 +20,7 @@ const Header = () => {
                     <div className="header-logo ">
                         <h2 className='fw-bold'>StoreCare</h2>
                     </div>
-                    <div className="header-nav-links d-flex">
+                    <div className="header-nav-links d-flex mr-2">
                         <Link to='/home'>Home</Link>
                         <Link to='/blog'>Blogs</Link>
                         {

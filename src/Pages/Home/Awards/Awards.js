@@ -9,7 +9,7 @@ const Awards = () => {
                     <img src="https://themes.potenzaglobalsolutions.com/cardealer-wp/wp-content/uploads/2018/05/09.png?id=8230" alt="" />
 
                 </div>
-                <div className="col awards-section">
+                <div className="col awards-section ">
                     <h2 className='mb-5'>Awards</h2>
                     <div className="row row-cols-1 row-cols-md-3 row-cols-lg-3">
                         <div className="col">
